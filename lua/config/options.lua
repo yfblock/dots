@@ -7,11 +7,15 @@ vim.g.rustaceanvim = {
     load_vscode_settings = true,
     default_settings = {
       -- rust-analyzer language server configuration
-      ["rust-analyzer"] = {
-        check = {
-          allTargets = false,
-        },
-      },
+      -- ["rust-analyzer"] = {
+      --   check = {
+      --     allTargets = false,
+      --   },
+      --   cargo = {
+      --     allTargets = false,
+      --     -- target = "aarch64-unknown-linux-gnu",
+      --   },
+      -- },
     },
   },
 }
