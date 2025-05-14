@@ -1,9 +1,10 @@
-# 💤 LazyVim Custom
+# Dots Directory
 
-## Installation
+## install
 
-```shell
-git clone git@github.com:yfblock/nvim.dots.git ~/.config/nvim
 ```
-```
+git clone https://github.com/yfblock/dots.git ~/dots
+cd ~/dots
+./install-fonts.sh
+./install.sh
 ```
