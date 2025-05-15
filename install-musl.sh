@@ -6,7 +6,7 @@ Yellow='\033[0;33m'
 CReset='\033[0m'
 
 download_musl() {
-  echo -n "Installing $1 to $ENV/$1  "
+  echo -n "Installing $1 to $ENVD/$1  "
   if [ -d "$ENVD/$1" ]; then
     echo -e "${Yellow}[ EXISTS ]${CReset}"
     return 0
