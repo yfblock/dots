@@ -7,7 +7,7 @@ Yellow='\033[0;33m'
 CReset='\033[0m'
 
 linkcur() {
-  echo -n "installing $2 to $CURPATH/$1    "
+  echo -n "installing $1 to $CURPATH/$2    "
   if [ ! -e "$2" ]; then
     ln -s $CURPATH/$1 $2
     echo -e "${Green}[ DONE ]${CReset}"
@@ -18,3 +18,4 @@ linkcur() {
 
 linkcur nvim ~/.config/nvim
 linkcur wezterm.lua ~/.wezterm.lua
+linkcur kitty ~/.config/kitty
