@@ -19,4 +19,9 @@ linkcur() {
 linkcur nvim ~/.config/nvim
 linkcur wezterm.lua ~/.wezterm.lua
 linkcur kitty ~/.config/kitty
+# Installing tpm(tmux plugin manager) plugins to .tmux/plugins/tpm path
+if [[ ! -d "~/.tmux/plugins/tpm" ]]; then
+  mkdir -p ~/.tmux/plugins
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
 linkcur tmux.conf ~/.tmux.conf
