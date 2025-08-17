@@ -19,3 +19,4 @@ linkcur() {
 linkcur nvim ~/.config/nvim
 linkcur wezterm.lua ~/.wezterm.lua
 linkcur kitty ~/.config/kitty
+linkcur tmux.conf ~/.tmux.conf
