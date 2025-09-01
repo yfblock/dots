@@ -8,7 +8,7 @@ install_font() {
   wget -nc https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/$1.zip
   unzip $1.zip -d $1 -x LICENCE.txt README.md
   mv $1 ~/.local/share/fonts/
-  rm -rf $1
+  rm -rf $1 $1.zip
 }
 
 mkdir -p ~/.local/share/fonts
