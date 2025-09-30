@@ -11,11 +11,17 @@ download_musl() {
     echo -e "${Yellow}[ EXISTS ]${CReset}"
     return 0
   fi
-  curl -L https://musl.cc/$1.tgz | tar -xz -C $ENVD/
+  curl -L "$2" | tar -xz -C $ENVD/
   echo -e "${Green}[ DONE ]${CReset}"
 }
 
+download_musl_cc() {
+  download_musl "$1" "https://musl.cc/$1.tgz"
+}
+
 mkdir -p ~/Env/
-download_musl aarch64-linux-musl-cross
-download_musl riscv64-linux-musl-cross
-download_musl x86_64-linux-musl-cross
+download_musl_cc aarch64-linux-musl-cross
+download_musl_cc riscv64-linux-musl-cross
+download_musl_cc x86_64-linux-musl-cross
+download_musl loongarch64-linux-musl-cross https://github.com/LoongsonLab/oscomp-toolchains-for-oskernel/releases/download/loongarch64-linux-musl-cross-gcc-13.2.0/loongarch64-linux-musl-cross.tgz
+
