@@ -1,5 +1,7 @@
 {
   "extras": [
+    "lazyvim.plugins.extras.coding.luasnip",
+    "lazyvim.plugins.extras.coding.neogen",
     "lazyvim.plugins.extras.coding.nvim-cmp",
     "lazyvim.plugins.extras.coding.yanky",
     "lazyvim.plugins.extras.editor.aerial",
@@ -16,11 +18,14 @@
     "lazyvim.plugins.extras.lang.toml",
     "lazyvim.plugins.extras.lang.typescript",
     "lazyvim.plugins.extras.ui.mini-animate",
+    "lazyvim.plugins.extras.ui.mini-indentscope",
     "lazyvim.plugins.extras.ui.smear-cursor",
-    "lazyvim.plugins.extras.util.dot"
+    "lazyvim.plugins.extras.util.dot",
+    "lazyvim.plugins.extras.util.mini-hipatterns",
+    "lazyvim.plugins.extras.util.project"
   ],
   "news": {
-    "NEWS.md": "11866"
+    "NEWS.md": "10960"
   },
   "version": 8
 }
