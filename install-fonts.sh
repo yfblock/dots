@@ -14,6 +14,7 @@ install_font() {
 mkdir -p ~/.local/share/fonts
 
 # wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/UbuntuSans.zip
+install_font AdwaitaMono
 install_font UbuntuSans
 install_font Noto
 install_font Ubuntu
