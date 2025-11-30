@@ -25,3 +25,8 @@ download_musl_cc riscv64-linux-musl-cross
 download_musl_cc x86_64-linux-musl-cross
 download_musl loongarch64-linux-musl-cross https://github.com/LoongsonLab/oscomp-toolchains-for-oskernel/releases/download/loongarch64-linux-musl-cross-gcc-13.2.0/loongarch64-linux-musl-cross.tgz
 
+cat <<EOF > ~/Env/env.sh
+export PATH=$PATH:$HOME/Env/aarch64-linux-musl-cross/bin:$HOME/Env/riscv64-linux-musl-cross/bin:$HOME/Env/x86_64-linux-musl-cross/bin
+export PATH=$PATH:$HOME/Env/loongarch64-linux-musl-cross/bin
+EOF
+
