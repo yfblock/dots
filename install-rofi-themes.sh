@@ -1,7 +1,7 @@
-#!/usr/bin/bash
-CURPATH=$(dirname $(realpath $0))
-[[ ! -d ~/.local/share/rofi/theme ]] && ln -s $CURPATH/rofi ~/.local/share/rofi
-read -n 1 -p "Select theme(Y/n): " need_select
-if [[ "$need_select" -eq "y" ]]; then 
-  rofi -show run -dpi 1 --show-icons
+#!/usr/bin/env bash
+CURPATH="$(cd "$(dirname "$0")" && pwd)"
+
+if [[ ! -e "$HOME/.local/share/rofi/themes" ]]; then
+  mkdir -p "$HOME/.local/share"
+  ln -s "$CURPATH/rofi" "$HOME/.local/share/rofi"
 fi

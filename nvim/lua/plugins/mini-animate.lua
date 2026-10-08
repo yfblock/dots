@@ -6,7 +6,7 @@ return {
     enabled = false
   },
   {
-    "echasnovski/mini.animate",
+    "nvim-mini/mini.animate",
     enabled = false
   }
 }

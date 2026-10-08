@@ -1,0 +1,39 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# 自定义 dnf/dnf5 补全目录:必须在 oh-my-zsh(内部会执行 compinit)之前加入 fpath
+# ${0:A:h:h} 沿 symlink 解析出本仓库根目录,不依赖固定克隆路径
+fpath=("${0:A:h:h}/zsh-config" $fpath)
+export ZSH="${ZDOTDIR:-$HOME}/.oh-my-zsh"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+# 插件:zsh-syntax-highlighting 保持在最后,history-substring-search 紧随其后
+plugins=(
+  git
+  zsh-autosuggestions
+  zsh-syntax-highlighting
+  zsh-history-substring-search
+)
+
+source "$ZSH/oh-my-zsh.sh"
+
+# echo to a exists file without tips
+setopt +o noclobber
+
+# 历史
+HISTSIZE=10000
+SAVEHIST=10000
+setopt SHARE_HISTORY HIST_IGNORE_ALL_DUPS HIST_REDUCE_BLANKS
+
+# 上下方向键做历史子串搜索
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+alias ls="lsd -l"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

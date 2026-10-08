@@ -1,10 +1,13 @@
-vim.lsp.config('denols', {
-    on_attach = on_attach,
-    root_markers = {"deno.json", "deno.jsonc"},
+-- Deno 与 TypeScript 项目按根标记自动选择 LSP:
+--   deno.json / deno.jsonc -> denols;package.json -> ts_ls
+vim.lsp.config("denols", {
+  root_markers = { "deno.json", "deno.jsonc" },
 })
 
-vim.lsp.config('ts_ls', {
-    on_attach = on_attach,
-    root_markers = {"package.json"},
-    single_file_support = false,
+vim.lsp.config("ts_ls", {
+  root_markers = { "package.json" },
+  single_file_support = false,
 })
+vim.lsp.enable({ "denols", "ts_ls" })
+
+return {}

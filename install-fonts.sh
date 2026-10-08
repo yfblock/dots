@@ -1,19 +1,17 @@
 #!/bin/bash
-
 install_font() {
-  if [ -d "~/.local/share/fonts/$1" ]; then
-    echo "FileExists"
+  if [ -d "$HOME/.local/share/fonts/$1" ]; then
+    echo "  [ EXISTS ] $1"
     return 0
   fi
-  wget -nc https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/$1.zip
-  unzip $1.zip -d $1 -x LICENCE.txt README.md
-  mv $1 ~/.local/share/fonts/
-  rm -rf $1 $1.zip
+  wget -nc "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/$1.zip" || return 1
+  unzip -q "$1.zip" -d "$1" -x LICENCE.txt README.md || return 1
+  mv "$1" "$HOME/.local/share/fonts/"
+  rm -f "$1.zip"
 }
 
-mkdir -p ~/.local/share/fonts
+mkdir -p "$HOME/.local/share/fonts"
 
-# wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/UbuntuSans.zip
 install_font AdwaitaMono
 install_font UbuntuSans
 install_font Noto
@@ -27,3 +25,5 @@ install_font FiraMono
 install_font FiraCode
 install_font DroidSansMono
 install_font DejavuSansMono
+
+fc-cache -f "$HOME/.local/share/fonts" >/dev/null 2>&1 || true
